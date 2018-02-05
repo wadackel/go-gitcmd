@@ -55,7 +55,7 @@ Since `Client` is an interface, it can easily be Mocked.
 
 ```go
 type MockClient struct {
-	Client // Interface embedding
+	gitcmd.Client // Interface embedding
 	ReturnCanExec        func() error
 	ReturnExec           func(string, ...string) (string, error)
 	ReturnInsideWorkTree func() error
