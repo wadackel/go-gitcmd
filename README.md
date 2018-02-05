@@ -35,12 +35,12 @@ import (
 func main() {
 	git := gitcmd.New(nil) // or `git := gitcmd.New(&Config{Bin: "/your/custom/git/bin"})`
 
-	out, err := git.Exec("config", "--get", "remote.origin.url")
+	out, err := git.Exec("rev-parse", "--git-dir")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Println(out) // "git@github.com:tsuyoshiwada/go-gitcmd.git"
+	fmt.Println(out) // ".git"
 }
 ```
 

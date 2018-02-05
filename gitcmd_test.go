@@ -18,8 +18,8 @@ func TestGitClient(t *testing.T) {
 		t.Errorf("InsideWorkTree() should be return nil: %v\n", err)
 	}
 
-	out, err := git.Exec("config", "--get", "remote.origin.url")
-	expected := "git@github.com:tsuyoshiwada/go-gitcmd.git"
+	out, err := git.Exec("rev-parse", "--git-dir")
+	expected := ".git"
 
 	if err != nil {
 		t.Errorf("Exec() should be return nil: %v\n", err)

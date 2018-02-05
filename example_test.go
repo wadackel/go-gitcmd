@@ -8,12 +8,12 @@ import (
 func Example() {
 	git := New(nil)
 
-	out, err := git.Exec("config", "--get", "remote.origin.url")
+	out, err := git.Exec("rev-parse", "--git-dir")
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	fmt.Println(out)
 	// Output:
-	// git@github.com:tsuyoshiwada/go-gitcmd.git
+	// .git
 }
